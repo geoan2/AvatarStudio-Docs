@@ -86,6 +86,10 @@ if !errorlevel! neq 0 (
     echo.
     echo Press any key to confirm FORCE PUSH...
     pause
+    
+    :: Re-ensure remote exists just in case
+    git remote add origin !repoUrl! >nul 2>nul
+    
     git push -u origin main --force
 )
 

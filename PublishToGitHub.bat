@@ -76,6 +76,19 @@ echo [5/5] Pushing to GitHub...
 git branch -M main
 git push -u origin main
 
+if !errorlevel! neq 0 (
+    echo.
+    echo [WARNING] GitHub rejected the push. 
+    echo This usually happens if you created the repository with a README or License file.
+    echo.
+    echo We will now FORCE overwrite the GitHub repository with your local files.
+    echo This will make your local documentation the source of truth.
+    echo.
+    echo Press any key to confirm FORCE PUSH...
+    pause
+    git push -u origin main --force
+)
+
 echo.
 echo ========================================================
 if %errorlevel% equ 0 (

@@ -354,7 +354,57 @@ SM->RequestSpawnFromZone(
 
 ---
 
-## 5. World Data Manager (`UAS_QS_WorldDataManager`)
+## 5. Enhanced Input System — 🔥 KILLER FEATURE
+
+### Назначение
+Автоматическая генерация полностью настроенного Enhanced Input для Player Character.
+
+### Ключевые особенности
+
+**Это единственная в своем роде система**, которая программно создает:
+- ✅ Input Actions с правильными типами
+- ✅ Input Mapping Context с привязками клавиш
+- ✅ **Input Modifiers** (Swizzle, Negate) — **программно!**
+- ✅ Автоматический fallback на Legacy Input
+
+### Компоненты
+
+#### A. Input Generator (`FAS_QS_Player_InputGenerator`)
+Создает Input Assets:
+- 10 Input Actions (Move, Look, Zoom, Jump, и т.д.)
+- Input Mapping Context с настроенными модификаторами
+- Сохраняет всё на диск в `/Game/QuestSystem/Input/`
+
+#### B. Input Utilities (`FAS_QS_InputUtils`)
+**Уникальная утилита** для программного добавления модификаторов:
+- `AddSwizzle()` — перестановка осей
+- `AddNegate()` — инверсия значения
+- `AddDeadZone()` — мертвая зона
+- `AddScalar()` — масштабирование
+
+#### C. Enhanced Input Component (`UPlayerInputComponent_Enhanced`)
+Обрабатывает Enhanced Input во время игры:
+- Загружает Input Actions
+- Добавляет IMC в Enhanced Input Subsystem
+- Привязывает Input Actions к callback-функциям
+
+#### D. Player Character (`AAS_PlayerCharacter`)
+Автоматический fallback:
+- Проверяет доступность Enhanced Input
+- Переключается на Legacy Input при необходимости
+- Работает на UE 4.x и UE 5.x
+
+### Workflow
+
+1. Создайте Player Character через NPC Data Table
+2. Система автоматически генерирует все Input Assets
+3. **Игрок готов к игре сразу после создания!**
+
+**Подробнее:** [Enhanced Input System](input_system.md) — полное описание системы
+
+---
+
+## 6. World Data Manager (`UAS_QS_WorldDataManager`)
 
 ### Назначение
 Вспомогательный менеджер, который загружает все ассеты квестов, фракций и спавнеров из папок проекта.

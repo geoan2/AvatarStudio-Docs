@@ -357,8 +357,19 @@ LookAtController->ClearHighPriorityTarget(EPlayerGazeMode::Combat);
 *   Если `true`, эта строка описывает вариант протагониста.
 *   Система добавляет:
     *   **Attention System** — Автофокус на интерактивных объектах.
-    *   **Enhanced Input** — Готовые биндинги для управления.
+    *   **Enhanced Input System** — 🔥 **KILLER FEATURE** — Полностью автоматическая настройка Enhanced Input!
     *   **Camera Follow** — Камера следует за персонажем.
+
+### Enhanced Input System — Уникальная особенность!
+
+При создании Player Character система **автоматически**:
+- ✅ Создает 10 Input Actions (Move, Look, Jump, и т.д.)
+- ✅ Создает Input Mapping Context с привязками клавиш
+- ✅ **Программно добавляет Input Modifiers** (Swizzle, Negate)
+- ✅ Настраивает автоматический fallback на Legacy Input
+- ✅ **Игрок готов к игре сразу после создания!**
+
+**Подробнее:** [Enhanced Input System](input_system.md) — полное описание этой уникальной системы
 
 ### Пример использования:
 Создайте NPC Data Table `DT_PlayerCharacters` с тремя строками:

@@ -43,6 +43,7 @@
 *   [Вкладка 3: Спавнеры (Spawners)](tab_spawners.md)
 *   [Вкладка 4: Диалоги (Dialogues)](tab_dialogues.md)
 *   [Вкладка 5: NPC и Анимации (NPCs)](tab_npcs.md)
+*   [🔥 Enhanced Input System — KILLER FEATURE](input_system.md)
 *   [Вкладка 6: Голоса (Voices)](tab_voices.md)
 *   [Вкладка 7: Липсинк (Lipsync)](tab_lipsync.md)
 *   [Runtime Systems (Системы времени выполнения)](runtime_systems.md)

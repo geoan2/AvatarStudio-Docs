@@ -308,17 +308,17 @@ graph TD
 
 ```mermaid
 graph TD
-    A[/Voices] --> B[/MainCharacters]
-    A --> C[/NPCs]
-    A --> D[/Cutscenes]
+    A[Voices Root] --> B[MainCharacters]
+    A --> C[NPCs]
+    A --> D[Cutscenes]
     
     B --> E[VA_Gandalf]
     B --> F[VA_Frodo]
     B --> G[VA_Aragorn]
     
-    C --> H[/Guards]
-    C --> I[/Merchants]
-    C --> J[/Peasants]
+    C --> H[Guards]
+    C --> I[Merchants]
+    C --> J[Peasants]
     
     H --> K[VA_Guards_Common]
     H --> L[VA_Guards_Combat]
